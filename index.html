@@ -123,6 +123,18 @@
             margin: 3px 0;
             transition: 0.3s;
         }
+        
+        /* Estilização do ícone do menu hamburguer quando aberto */
+        .mobile-menu-btn.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .mobile-menu-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-btn.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
 
         /* Conteúdo Principal */
         .main-content {
@@ -422,7 +434,7 @@
             margin-bottom: 10px; 
         }
         .article-abstract-container.expanded {
-            max-height: 1500px; 
+            max-height: 1500px; /* Ajuste conforme necessário para o conteúdo do resumo */
         }
         .article-abstract {
             color: var(--text-secondary);
@@ -471,7 +483,7 @@
         .article-links {
             display: flex;
             gap: 15px;
-            margin-top: auto; 
+            margin-top: auto; /* Empurra os links para o final do card */
         }
 
         .article-link {
@@ -895,7 +907,7 @@
             .nav-menu {
                 position: fixed;
                 top: 80px; 
-                left: -100%;
+                left: -100%; /* Começa fora da tela */
                 width: 100%;
                 height: calc(100vh - 80px);
                 background: var(--white);
@@ -909,7 +921,7 @@
             }
 
             .nav-menu.active {
-                left: 0;
+                left: 0; /* Entra na tela */
             }
 
             .nav-item {
@@ -936,7 +948,7 @@
             }
 
             .home-visual {
-                order: -1; 
+                order: -1; /* Imagem aparece primeiro no mobile */
                 min-height: auto; 
                 padding: 30px;
             }
@@ -999,7 +1011,7 @@
                 height: 70px; 
             }
             .nav-menu {
-                top: 70px;
+                top: 70px; /* Ajusta ao novo tamanho da navbar */
                 height: calc(100vh - 70px);
             }
             .logo {
@@ -1052,7 +1064,7 @@
             }
 
             .portfolio-grid, .blog-grid, .articles-grid, .curriculum-grid {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr; /* Uma coluna para telas pequenas */
                 gap: 25px;
             }
             .portfolio-card, .blog-card, .article-card, .skills-card-item {
@@ -1116,7 +1128,7 @@
                     </div>
                 </div>
                 <div class="home-visual">
-                    <img src="https://github.com/silviopaula/silviopaula/blob/main/img/foto.jpg?raw=true" alt="Silvio da Rosa Paula" onerror="this.onerror=null; this.src='https://placehold.co/300x300/34495e/ecf0f1?text=Foto+Indisponível';">
+                    <img src="https://github.com/silviopaula/silviopaula/blob/main/img/foto.jpg?raw=true" alt="Foto de Silvio da Rosa Paula" onerror="this.onerror=null; this.src='https://placehold.co/300x300/34495e/ecf0f1?text=Foto+Indisponível';">
                     <div class="hero-social-links">
                         <a href="mailto:silvio.rosa.paula@gmail.com" aria-label="Email">
                             <i class="fas fa-envelope"></i>
@@ -1170,7 +1182,6 @@
                                 <li>Apresentação das projeções em reuniões corporativas.</li>
                             </ul>
                         </div>
-
                         <div class="article-card curriculum-experience-card">
                             <div class="article-year">JAN 2021 - ABR 2023</div>
                             <h4 class="curriculum-item-title">Pesquisador Bolsista</h4>
@@ -1183,7 +1194,6 @@
                                 <li>Colaboração em estudos sobre seguro rural e agricultura familiar.</li>
                             </ul>
                         </div>
-
                         <div class="article-card curriculum-experience-card">
                             <div class="article-year">JUN 2022 - JAN 2023</div>
                             <h4 class="curriculum-item-title">Pesquisador Assistente</h4>
@@ -1194,7 +1204,6 @@
                                 <li>Ghost writer no Laboratório de Avaliação e Inovação em Políticas Públicas (LAIPP).</li>
                             </ul>
                         </div>
-
                         <div class="article-card curriculum-experience-card">
                             <div class="article-year">SET 2021 - JAN 2023</div>
                             <h4 class="curriculum-item-title">Consultor Associado</h4>
@@ -1217,14 +1226,12 @@
                             <p class="text-light">Tese: "Ensaios sobre seguro rural"</p>
                             <p class="text-light">Status: Concluído</p>
                         </div>
-
                         <div class="article-card curriculum-education-card">
                             <div class="article-year">ESPECIALIZAÇÃO (2021-2022)</div>
                             <h4 class="curriculum-item-title">Machine Learning e Inteligência Artificial</h4>
                             <p>Anhanguera Educacional</p>
                             <p class="text-light">Status: Concluído</p>
                         </div>
-
                         <div class="article-card curriculum-education-card">
                             <div class="article-year">MESTRADO (2017-2019)</div>
                             <h4 class="curriculum-item-title">Economia Aplicada</h4>
@@ -1232,7 +1239,6 @@
                             <p class="text-light">Dissertação: "Ensaios Sobre Capital Humano e Inovação"</p>
                             <p class="text-light">Status: Concluído</p>
                         </div>
-
                         <div class="article-card curriculum-education-card">
                             <div class="article-year">BACHARELADO (2011-2016)</div>
                             <h4 class="curriculum-item-title">Ciências Econômicas</h4>
@@ -1266,15 +1272,16 @@
                         <div class="skills-card-item">
                             <h5>Linguagens e Ferramentas</h5>
                             <ul>
-                                <li>R</li>
-                                <li>Python (Pandas, NumPy, Scikit-learn, TensorFlow, Keras)</li>
+                                <li>R (caret, tidymodels, xgboost, lightgbm, catboost, randomForest, ranger, e1071, glmnet, mlr3, h2o, tidyverse, dplyr, data.table, tidyr, tibble, janitor, purrr, readr, stringr, lubridate, magrittr, forcats, ggplot2, plotly, forecast, fable, tsibble, prophet, zoo, xts, tsibbledata,  tseries, timetk, feasts, imputeTS, AER, plm, ivreg, systemfit, sandwich, lmtest, car, estimatr, fixest, did, Synth, CausalImpact, twowayvcov, shinny.)</li>
+                                <li>Python (scikit-learn, xgboost, lightgbm, catboost, statsmodels, pandas, numpy, pyjanitor, datatable, matplotlib, seaborn, plotly, bokeh, statsmodels.tsa, arch, prophet, pmdarima, tslearn, darts, gluonts, statsforecast, forecast, linearmodels, econml, causalml, dowhy, pycausal, Pycaret, Keras, H2O)</li>
                                 <li>SQL</li>
                                 <li>Power BI</li>
                                 <li>Julia</li>
                                 <li>Git & GitHub</li>
                                 <li>QGIS, GeoDa</li>
-                                <li>LLMs (ChatGPT, Gemini, Claude, Modelos Locais)</li>
-                                <li>Pacotes Office (Excel Avançado, VBA)</li>
+                                <li>LLMs (ChatGPT, Gemini, Claude, NotebookLM, Groq, Qwen, DeepSeek, Genspark, loveble, Modelos Locais)</li>
+                                <li>Outras (n8n, cursor AI, Windsurf, vscode, firebase, OpenRouter, Promptly, Bolt, reply )</li>
+                                <li>Pacotes Office (Excel, Word, PowerPoint)</li>
                             </ul>
                         </div>
                     </div>
@@ -1282,11 +1289,19 @@
                     <h4 class="curriculum-subsection-title">Conhecimentos Técnicos Detalhados</h4>
                     <div class="curriculum-grid-large-gap">
                         <div class="skills-card-item">
-                            <h5>Métodos Econométricos</h5>
+                            <h5>Métodos Econométricos e Inferência Causal</h5>
                             <ul>
                                 <li>Modelos de Regressão Linear e Não Linear</li>
                                 <li>Modelos de Séries Temporais (ARIMA, VAR, VEC)</li>
                                 <li>Modelos de Painel de Dados (Efeitos Fixos/Aleatórios, GMM)</li>
+                                <li>Variáveis Instrumentais (IV)</li>
+                                <li>Equações Estruturais (SEM)</li>
+                                <li>Diferença-em-Diferenças (DID)</li>
+                                <li>Regressão Discontínua (RDD)</li>
+                                <li>Propensity Score Matching (PSM)</li>
+                                <li>Controle Sintético (Synthetic Control)</li>
+                                <li>Bayesian Structural Time Series (BSTS)</li>
+                                <li>Machine Learning Causal (Causal Forests)</li>
                             </ul>
                         </div>
                         <div class="skills-card-item">
@@ -1299,18 +1314,6 @@
                                 <li>AutoML</li>
                                 <li>Modelos de Classificação (Logística, k-NN, Naive Bayes)</li>
                                 <li>Modelos de Clusterização (K-Means, Hierárquico)</li>
-                            </ul>
-                        </div>
-                        <div class="skills-card-item">
-                            <h5>Inferência Causal</h5>
-                            <ul>
-                                <li>Variáveis Instrumentais (IV)</li>
-                                <li>Diferença-em-Diferenças (DID)</li>
-                                <li>Regressão Discontínua (RDD)</li>
-                                <li>Propensity Score Matching (PSM)</li>
-                                <li>Controle Sintético (Synthetic Control)</li>
-                                <li>Bayesian Structural Time Series (BSTS)</li>
-                                <li>Machine Learning Causal (Causal Forests)</li>
                             </ul>
                         </div>
                         <div class="skills-card-item">
@@ -1331,7 +1334,7 @@
                                 <li>Remoção de Ruído e Suavização de Dados</li>
                             </ul>
                         </div>
-                         <div class="skills-card-item">
+                        <div class="skills-card-item">
                             <h5>Conhecimentos Setoriais e Gerais</h5>
                             <ul>
                                 <li>Setor Elétrico (Regulação, Projeções)</li>
@@ -1497,6 +1500,36 @@
                 </div>
                 <div class="articles-grid">
                     <div class="article-card">
+                        <div class="article-year">2025</div>
+                        <h3 class="article-title" data-title="O Programa de Aquisição de Alimentos como Instrumento de Estímulo às Atividades Econômicas da Agricultura Familiar Brasileira">O Programa de Aquisição de Alimentos como Instrumento de Estímulo às Atividades Econômicas da Agricultura Familiar Brasileira</h3>
+                        <p class="article-authors" data-authors="Regina Helena Rosa Sambuichi, Ana Flávia Cordeiro Souza de Almeida, Carla Gualdani, Silvio da Rosa Paula, Felipe Jabali Marques">Regina Helena Rosa Sambuichi, Ana Flávia Cordeiro Souza de Almeida, Carla Gualdani, Silvio da Rosa Paula, Felipe Jabali Marques</p>
+                        <p class="article-journal">Capítulo de Livro em: AGRICULTURA E DIVERSIDADES: TRAJETÓRIAS, DESAFIOS REGIONAIS E POLÍTICAS PÚBLICAS NO BRASIL, v. 2. Ipea.</p>
+                        <div class="article-abstract-container">
+                            <p class="article-abstract">
+                                Este capítulo analisa o Programa de Aquisição de Alimentos (PAA) como um instrumento fundamental para o estímulo das atividades econômicas da agricultura familiar no Brasil. A pesquisa explora como o PAA contribui para o fortalecimento da produção, facilita a comercialização e promove o incremento da renda dos agricultores familiares. Adicionalmente, discute-se o papel do programa no fomento ao desenvolvimento rural sustentável e na promoção da segurança alimentar e nutricional em diversas regiões do país.
+                            </p>
+                        </div>
+                        <button class="toggle-abstract-btn" aria-expanded="false">Ver resumo <i class="fas fa-chevron-down"></i></button>
+                        <div class="article-links">
+                            <a href="https://repositorio.ipea.gov.br/bitstream/11058/17012/1/Cap09_O_Programa_de_aquisicao_de_alimentos.pdf" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver Capítulo (PDF)</a>
+                            </div>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-year">2024</div>
+                        <h3 class="article-title" data-title="Public food procurement and food security: an assessment of the impacts of the PAA on family farming in Brazil.">Public food procurement and food security: an assessment of the impacts of the PAA on family farming in Brazil.</h3>
+                        <p class="article-authors" data-authors="Regina Helena Rosa Sambuichi, Silvio da Rosa Paula, Gabriela Perin, Ana Flávia Cordeiro Souza de Almeida, Carla Gualdani, Felipe Jabali Marques">Regina Helena Rosa Sambuichi, Silvio da Rosa Paula, Gabriela Perin, Ana Flávia Cordeiro Souza de Almeida, Carla Gualdani, Felipe Jabali Marques</p>
+                        <p class="article-journal">Desenvolvimento E Meio Ambiente, v. 63</p>
+                        <div class="article-abstract-container">
+                            <p class="article-abstract">
+                                Este artigo tem como objetivo analisar o impacto do Programa de Aquisição de Alimentos (PAA), na modalidade Doação Simultânea (DS), na segurança alimentar e nutricional de agricultores familiares no Brasil. Utilizando dados da Pesquisa Nacional por Amostra de Domicílios (PNAD) de 2004 a 2014 e o método econométrico de Diferenças em Diferenças (DID) combinado com Propensity Score Matching (PSM), os resultados indicam que o PAA-DS aumentou significativamente o consumo de frutas, hortaliças e tubérculos pelas famílias beneficiárias. Ademais, houve redução no consumo de alimentos ultraprocessados, sugerindo uma melhoria na qualidade da dieta. Estes achados ressaltam a importância do PAA como política pública de promoção da segurança alimentar e de hábitos alimentares saudáveis entre os agricultores familiares.
+                            </p>
+                        </div>
+                        <button class="toggle-abstract-btn" aria-expanded="false">Ver resumo <i class="fas fa-chevron-down"></i></button>
+                        <div class="article-links">
+                            <a href="https://revistas.ufpr.br/made/article/download/91581/52990" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver PDF</a>
+                            </div>
+                    </div>
+                    <div class="article-card">
                         <div class="article-year">2023</div>
                         <h3 class="article-title" data-title="A Inserção da Agricultura Familiar no Programa Nacional de Alimentação Escolar: Impactos na Renda e na Atividade Produtiva">A Inserção da Agricultura Familiar no Programa Nacional de Alimentação Escolar: Impactos na Renda e na Atividade Produtiva</h3>
                         <p class="article-authors" data-authors="Silvio da Rosa Paula, Regina Helena Rosa Sambuichi, Sandro Pereira Silva, Fabio Alves, Alexandre Arbex Valadares">Silvio da Rosa Paula, Regina Helena Rosa Sambuichi, Sandro Pereira Silva, Fabio Alves, Alexandre Arbex Valadares</p>
@@ -1524,8 +1557,7 @@
                         <button class="toggle-abstract-btn" aria-expanded="false">Ver resumo <i class="fas fa-chevron-down"></i></button>
                         <div class="article-links">
                             <a href="https://revistaaber.org.br/rberu/article/view/1016" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver Artigo</a>
-                             <a href="https://doi.org/10.54766/rberu.v17i3.1016" target="_blank" rel="noopener noreferrer" class="article-link secondary">DOI</a>
-                        </div>
+                             </div>
                     </div>
                     <div class="article-card">
                         <div class="article-year">2023</div>
@@ -1731,7 +1763,7 @@
                     </p>
                 </div>
                 <div class="blog-grid" id="blog-ideas-container">
-                     <div class="blog-card">
+                    <div class="blog-card">
                         <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQE2V0ephOlCIw/feedshare-shrink_800/B4DZVzSMu.HkAg-/0/1741395906278?e=1751500800&v=beta&t=8iKi8AnVo1V0P2q3irY9m1tswbeEcC9vTqPxDU4Akcg');"></div>
                         <div class="blog-content">
                             <div class="blog-date">28 de Maio de 2024</div> <h3 class="blog-title">Gostaria de compartilhar meu novo aplicativo Shiny: Análise Causal com CausalImpact!</h3>
@@ -1761,7 +1793,7 @@
                         <h4 class="curriculum-item-title">Tópicos Futuros</h4>
                         <p>Discussões sobre LLMs, IA generativa em econometria, e mais.</p>
                     </div>
-                     <div class="article-card curriculum-cert-event-card" style="text-align: center; padding: 50px; opacity:0.7">
+                    <div class="article-card curriculum-cert-event-card" style="text-align: center; padding: 50px; opacity:0.7">
                         <i class="fas fa-comments fa-3x" style="color: var(--accent-primary); margin-bottom: 20px;"></i>
                         <h4 class="curriculum-item-title">Interaja</h4>
                         <p>Sugestões de temas são bem-vindas através da seção de contato.</p>
@@ -1798,7 +1830,7 @@
                             <div class="contact-icon"> <i class="fab fa-linkedin"></i> </div>
                             <div> <h4>LinkedIn</h4> <p><a href="https://www.linkedin.com/in/silvio-paula" target="_blank" rel="noopener noreferrer">linkedin.com/in/silvio-paula</a></p> </div>
                         </div>
-                         <div class="contact-item">
+                        <div class="contact-item">
                             <div class="contact-icon"> <i class="fab fa-github"></i> </div>
                             <div> <h4>GitHub</h4> <p><a href="https://github.com/silviopaula" target="_blank" rel="noopener noreferrer">github.com/silviopaula</a></p> </div>
                         </div>
@@ -1817,20 +1849,30 @@
     </main>
 
     <script>
-        // Funcionalidade de navegação
+        // Seletores Globais para elementos da Navegação e Seções
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('.section');
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
         const navbar = document.getElementById('navbar');
         
+        /**
+         * Define a seção ativa na página.
+         * Remove a classe 'active' de todos os links de navegação e seções.
+         * Adiciona a classe 'active' ao link de navegação e à seção correspondentes ao ID fornecido.
+         * Fecha o menu mobile se estiver aberto.
+         * @param {string} targetSectionId - O ID da seção a ser ativada.
+         */
         function setActiveSection(targetSectionId) {
+            // Remove a classe 'active' de todos os links e seções
             navLinks.forEach(nl => nl.classList.remove('active'));
             sections.forEach(s => s.classList.remove('active'));
 
+            // Encontra o link de navegação e a seção alvo
             const targetNavLink = document.querySelector(`.nav-link[data-section="${targetSectionId}"]`);
             const targetSectionElement = document.getElementById(targetSectionId);
 
+            // Ativa o link de navegação e a seção correspondente
             if (targetNavLink) {
                 targetNavLink.classList.add('active');
             }
@@ -1838,26 +1880,34 @@
                 targetSectionElement.classList.add('active');
             }
             
+            // Fecha o menu mobile se estiver ativo
             if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
+                 // Restaura o ícone do menu hamburguer
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.classList.remove('open');
+                }
             }
         }
 
+        // Adiciona listeners de clique aos links de navegação principal
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
+                e.preventDefault(); // Previne o comportamento padrão do link
                 const targetSectionId = link.dataset.section;
                 setActiveSection(targetSectionId);
             });
         });
 
+        // Adiciona listeners de clique aos botões que também navegam para seções
         document.querySelectorAll('.btn-primary[data-section], .btn-secondary[data-section], .btn-cv-download[data-section]').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const targetSectionId = btn.dataset.section;
                 if (targetSectionId) { 
-                    e.preventDefault(); 
+                    e.preventDefault(); // Previne o comportamento padrão do link/botão
                     setActiveSection(targetSectionId);
                     const targetElement = document.getElementById(targetSectionId);
+                    // Rola suavemente para a seção após um pequeno atraso para garantir que a seção esteja visível
                     if (targetElement) {
                         setTimeout(() => {
                             targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1867,20 +1917,26 @@
             });
         });
         
+        // Funcionalidade do menu mobile (hamburguer)
         if (mobileMenuBtn && navMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('open'); // Adiciona/remove classe para animar o ícone
             });
         }
 
+        // Fecha o menu mobile ao clicar fora dele
         document.addEventListener('click', (e) => {
             if (navMenu && mobileMenuBtn && navMenu.classList.contains('active')) {
+                // Verifica se o clique foi fora do menu e do botão do menu
                 if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('open');
                 }
             }
         });
 
+        // Adiciona efeito de scroll à barra de navegação
         if (navbar) {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1891,40 +1947,56 @@
             });
         }
         
+        // Desabilita links com a classe 'disabled-link' (se houver)
         document.querySelectorAll('.disabled-link').forEach(link => {
             link.addEventListener('click', (e) => e.preventDefault());
         });
 
+        /**
+         * Ordena os cards de artigos na seção 'Acadêmico' por ano (mais recente primeiro)
+         * e depois por título (alfabeticamente) em caso de empate no ano.
+         */
         function sortArticles() {
             const articlesGrid = document.querySelector('#articles .articles-grid');
-            if (!articlesGrid) return; 
+            if (!articlesGrid) return; // Sai se o grid não for encontrado
 
             const articles = Array.from(articlesGrid.querySelectorAll('.article-card'));
 
             articles.sort((a, b) => {
+                // Extrai o ano do texto do elemento .article-year
                 const yearA_match = a.querySelector('.article-year').textContent.match(/\d{4}/);
                 const yearB_match = b.querySelector('.article-year').textContent.match(/\d{4}/);
 
+                // Converte para número, tratando casos onde o ano pode não ser encontrado
                 const yearA = yearA_match ? parseInt(yearA_match[0], 10) : 0; 
                 const yearB = yearB_match ? parseInt(yearB_match[0], 10) : 0; 
                 
+                // Ordena por ano (descendente)
                 if (yearB !== yearA) {
                     return yearB - yearA; 
                 }
                 
+                // Se os anos forem iguais, ordena por título (ascendente)
                 const titleA_element = a.querySelector('.article-title');
                 const titleB_element = b.querySelector('.article-title');
 
-                const titleA = titleA_element ? titleA_element.textContent.toLowerCase() : '';
-                const titleB = titleB_element ? titleB_element.textContent.toLowerCase() : '';
+                // Usa o atributo data-title para ordenação, garantindo que o título completo seja usado
+                const titleA = titleA_element && titleA_element.dataset.title ? titleA_element.dataset.title.toLowerCase() : '';
+                const titleB = titleB_element && titleB_element.dataset.title ? titleB_element.dataset.title.toLowerCase() : '';
                 
                 return titleA.localeCompare(titleB); 
             });
 
+            // Limpa o grid e adiciona os artigos ordenados
             articlesGrid.innerHTML = ''; 
             articles.forEach(article => articlesGrid.appendChild(article)); 
         }
 
+        /**
+         * Inicializa a funcionalidade de "Ver resumo" para os cards de artigos.
+         * Esconde o botão se o resumo for muito curto ou inexistente.
+         * Expande automaticamente resumos curtos.
+         */
         function initializeAbstractToggle() {
             document.querySelectorAll('#articles .article-card').forEach((card) => {
                 const abstractContainer = card.querySelector('.article-abstract-container');
@@ -1934,43 +2006,46 @@
                 if (abstractContainer && abstractP && toggleBtn) {
                     const abstractTextLength = abstractP.textContent.trim().length;
 
-                    if (abstractTextLength === 0) {
+                    if (abstractTextLength === 0) { // Sem resumo
                         toggleBtn.style.display = 'none';
                         abstractContainer.style.display = 'none'; 
-                    } else if (abstractTextLength < 200) { 
+                    } else if (abstractTextLength < 200 && abstractTextLength > 0) { // Resumo curto, expande por padrão
                         abstractContainer.classList.add('expanded');
                         toggleBtn.setAttribute('aria-expanded', 'true');
-                        toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>';
+                        toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>'; // Ícone para cima
                         toggleBtn.style.display = 'inline-flex'; 
-                    } else {
+                    } else { // Resumo longo, começa colapsado
                         abstractContainer.classList.remove('expanded'); 
                         toggleBtn.setAttribute('aria-expanded', 'false');
-                        toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>';
+                        toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>'; // Ícone para baixo
                         toggleBtn.style.display = 'inline-flex'; 
                     }
 
+                    // Adiciona listener de clique ao botão de toggle
                     toggleBtn.addEventListener('click', () => {
                         const isExpanded = abstractContainer.classList.toggle('expanded');
                         toggleBtn.setAttribute('aria-expanded', isExpanded.toString());
                         if (isExpanded) {
-                            toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>';
+                            toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>'; // Ícone para cima
                         } else {
-                            toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>';
+                            toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>'; // Ícone para baixo
                         }
                     });
-                } else if (toggleBtn) { 
+                } else if (toggleBtn) { // Se não houver container de resumo, esconde o botão
                     toggleBtn.style.display = 'none';
                 }
             });
         }
 
 
+        // Executa funções de inicialização quando o DOM estiver completamente carregado
         document.addEventListener('DOMContentLoaded', () => {
-            setActiveSection('home'); 
-            sortArticles(); 
-            initializeAbstractToggle(); 
+            setActiveSection('home'); // Define a seção 'home' como ativa ao carregar
+            sortArticles(); // Ordena os artigos
+            initializeAbstractToggle(); // Inicializa a funcionalidade de toggle dos resumos
         });
 
     </script>
 </body>
 </html>
+```
