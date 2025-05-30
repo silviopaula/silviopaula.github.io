@@ -232,7 +232,7 @@
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3.5rem; /* Fonte reduzida de 4rem para 3.5rem */
             font-weight: 600;
             color: var(--primary-dark);
             line-height: 1.1;
@@ -426,6 +426,9 @@
             font-size: 0.9rem;
             font-weight: 500;
             transition: all 0.3s ease;
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
         }
 
         .article-link.primary {
@@ -563,12 +566,28 @@
         /* Seção Portfólio */
         .portfolio-grid {
             display: grid;
+            /* Ajustado para centralizar um único item se for o caso, ou manter o grid responsivo */
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
             gap: 40px;
+            justify-content: center; /* Centraliza o item se houver apenas um */
         }
 
         .portfolio-card { 
+            background: var(--white); 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px var(--shadow-light); 
+            transition: all 0.4s ease; 
+            border: 1px solid var(--border-color); 
+            display: flex; 
+            flex-direction: column; 
             overflow: hidden; 
+            max-width: 450px; /* Limita a largura máxima do card único */
+            width: 100%; /* Garante que o card ocupe o espaço disponível até o max-width */
+        }
+
+        .portfolio-card:hover { 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
         }
 
         .portfolio-image {
@@ -581,6 +600,8 @@
             font-size: 2.5rem; 
             position: relative;
             overflow: hidden;
+            border-top-left-radius: 20px; 
+            border-top-right-radius: 20px;
         }
         .portfolio-image i {
             transition: transform 0.3s ease;
@@ -592,6 +613,7 @@
 
         .portfolio-content {
             padding: 25px; 
+            flex-grow: 1; 
         }
 
         .portfolio-category {
@@ -616,6 +638,7 @@
             line-height: 1.7;
             margin-bottom: 20px;
             font-size: 0.95rem;
+            flex-grow: 1; 
         }
 
         .portfolio-tech {
@@ -637,6 +660,7 @@
         .portfolio-links {
             display: flex;
             gap: 15px;
+            margin-top: auto; 
         }
 
         /* Seção Blog */
@@ -647,19 +671,32 @@
         }
 
         .blog-card { 
+            background: var(--white); 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px var(--shadow-light); 
+            transition: all 0.4s ease; 
+            border: 1px solid var(--border-color); 
+            display: flex; 
+            flex-direction: column; 
             overflow: hidden;
+        }
+        .blog-card:hover { 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px var(--shadow-medium);
         }
 
         .blog-image {
             height: 200px;
-            background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark)); 
             position: relative;
             background-size: cover; 
             background-position: center; 
+            border-top-left-radius: 20px; 
+            border-top-right-radius: 20px;
         }
 
         .blog-content {
             padding: 25px; 
+            flex-grow: 1;
         }
 
         .blog-date {
@@ -682,6 +719,7 @@
             line-height: 1.7;
             margin-bottom: 15px; 
             font-size: 0.95rem;
+            flex-grow: 1;
         }
 
         .read-more {
@@ -693,6 +731,7 @@
             gap: 5px;
             transition: transform 0.3s ease, color 0.3s ease; 
             font-size: 0.95rem;
+            margin-top: auto;
         }
 
         .read-more:hover {
@@ -788,6 +827,9 @@
             }
             .content-container {
                 padding: 70px 30px;
+            }
+             .hero-title {
+                font-size: 3rem; /* Ajuste para telas menores */
             }
         }
 
@@ -1547,103 +1589,28 @@
                 </div>
                 <div class="portfolio-grid">
                     <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-bolt"></i> </div>
+                        <div class="portfolio-image"> <i class="fas fa-magnifying-glass-chart"></i> </div>
                         <div class="portfolio-content">
-                            <div class="portfolio-category">ANÁLISE DE DADOS | SETOR ELÉTRICO</div>
-                            <h3 class="portfolio-title">Sistema de Projeções Energéticas</h3>
+                            <div class="portfolio-category">APLICATIVO WEB | CIÊNCIA DE DADOS</div>
+                            <h3 class="portfolio-title">App Shiny para Inferência Causal (CausalImpact)</h3>
                             <p class="portfolio-description">
-                                Sistema para 189 projeções trimestrais (consumo, faturamento, GD) para 7 distribuidoras do Grupo Equatorial, com monitoramento de desvios.
+                                Aplicativo web interativo desenvolvido com R Shiny para realizar análises de impacto causal. Utiliza o pacote CausalImpact para estimar efeitos de intervenções em séries temporais, oferecendo uma ferramenta visual e prática para pesquisadores e analistas.
                             </p>
                             <div class="portfolio-tech">
-                                <span class="tech-tag">R</span> <span class="tech-tag">Python</span> <span class="tech-tag">SQL</span> <span class="tech-tag">Power BI</span> <span class="tech-tag">Ensemble Models</span>
+                                <span class="tech-tag">R</span> <span class="tech-tag">Shiny</span> <span class="tech-tag">CausalImpact</span> <span class="tech-tag">Séries Temporais</span> <span class="tech-tag">Inferência Causal</span>
                             </div>
                             <div class="portfolio-links">
-                                <a href="#" class="article-link primary disabled-link" aria-disabled="true" onclick="return false;">Relatório (Interno)</a>
-                                <a href="#" class="article-link secondary disabled-link" aria-disabled="true" onclick="return false;">Dashboard (Interno)</a>
+                                <a href="https://silviopaula.shinyapps.io/app_causal_impact/" target="_blank" rel="noopener noreferrer" class="article-link primary">
+                                    <i class="fas fa-external-link-alt"></i>Acessar App
+                                </a>
+                                <a href="https://github.com/silviopaula/Causal_impact_app" target="_blank" rel="noopener noreferrer" class="article-link secondary">
+                                    <i class="fab fa-github"></i>Ver no GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-seedling"></i> </div>
-                        <div class="portfolio-content">
-                            <div class="portfolio-category">AVALIAÇÃO DE IMPACTO | POLÍTICAS PÚBLICAS</div>
-                            <h3 class="portfolio-title">Avaliação PAA e PNAE (IPEA)</h3>
-                            <p class="portfolio-description">
-                                Estudo de avaliação de impacto causal dos programas PAA e PNAE na agricultura familiar, utilizando métodos como DID e Controle Sintético.
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">R</span> <span class="tech-tag">Stata</span> <span class="tech-tag">Inferência Causal</span> <span class="tech-tag">Microdados</span>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="#" class="article-link primary disabled-link" aria-disabled="true" onclick="return false;">Relatório IPEA (Interno)</a>
-                                </div>
-                        </div>
+                  
                     </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-shield-alt"></i> </div>
-                        <div class="portfolio-content">
-                            <div class="portfolio-category">SEGURO RURAL | ECONOMETRIA</div>
-                            <h3 class="portfolio-title">Análise do Programa de Subvenção ao Seguro Rural</h3>
-                            <p class="portfolio-description">
-                                Pesquisa de doutorado sobre impactos do programa de subvenção ao prêmio do seguro rural na renda e diversificação produtiva da agricultura familiar.
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Econometria</span> <span class="tech-tag">Painel Dinâmico</span> <span class="tech-tag">R</span> <span class="tech-tag">Machine Learning</span>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="https://guaiaca.ufpel.edu.br/handle/prefix/8970" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver Tese</a>
-                                <a href="https://www.anpec.org.br/encontro/2022/submissao/files_I/i10-1a060394449a2d5024b9af28acf70836.pdf" target="_blank" rel="noopener noreferrer" class="article-link secondary">Artigo ANPEC</a>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-lightbulb"></i> </div>
-                        <div class="portfolio-content">
-                            <div class="portfolio-category">INOVAÇÃO | CRESCIMENTO ECONÔMICO</div>
-                            <h3 class="portfolio-title">Inovação e Crescimento Econômico no Brasil</h3>
-                            <p class="portfolio-description">
-                                Estudo com painel dinâmico analisando a relação entre inovação (via patentes) e crescimento econômico nos estados brasileiros (2000-2015).
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Painel Dinâmico (GMM)</span> <span class="tech-tag">R</span> <span class="tech-tag">Patentes</span> <span class="tech-tag">Econometria</span>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="https://editorarevistas.mackenzie.br/index.php/rem/article/view/14391/10962" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver Artigo</a>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-graduation-cap"></i> </div>
-                        <div class="portfolio-content">
-                            <div class="portfolio-category">CAPITAL HUMANO | EDUCAÇÃO</div>
-                            <h3 class="portfolio-title">Religião e Desempenho Educacional (ENEM)</h3>
-                            <p class="portfolio-description">
-                                Análise dos determinantes religiosos no desempenho educacional utilizando dados do ENEM, investigando como contextos influenciam resultados.
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">R</span> <span class="tech-tag">Econometria</span> <span class="tech-tag">Microdados ENEM</span> <span class="tech-tag">Educação</span>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="https://editorarevistas.mackenzie.br/index.php/rem/article/view/15899" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver Artigo</a>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-code-branch"></i> </div> <div class="portfolio-content">
-                            <div class="portfolio-category">CIÊNCIA DE DADOS | CÓDIGO ABERTO</div>
-                            <h3 class="portfolio-title">Repositórios no GitHub</h3>
-                            <p class="portfolio-description">
-                                Desenvolvimento e compartilhamento de códigos, análises e projetos relacionados à ciência de dados, econometria e machine learning.
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Python</span> <span class="tech-tag">R</span> <span class="tech-tag">Jupyter Notebooks</span> <span class="tech-tag">Dashboards</span>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="https://github.com/silviopaula" target="_blank" rel="noopener noreferrer" class="article-link primary"><i class="fab fa-github"></i> GitHub</a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1658,7 +1625,7 @@
                 </div>
                 <div class="blog-grid" id="blog-ideas-container">
                      <div class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQE2V0ephOlCIw/feedshare-shrink_800/B4DZVzSMu.HkAg-/0/1741395906278?e=1751500800&v=beta&t=8iKi8AnVo1V0P2q3irY9m1tswbeEcC9vTqPxDU4Akcg'); background-size: cover; background-position: center;"></div>
+                        <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQE2V0ephOlCIw/feedshare-shrink_800/B4DZVzSMu.HkAg-/0/1741395906278?e=1751500800&v=beta&t=8iKi8AnVo1V0P2q3irY9m1tswbeEcC9vTqPxDU4Akcg');"></div>
                         <div class="blog-content">
                             <div class="blog-date">28 de Maio de 2024</div> <h3 class="blog-title">Gostaria de compartilhar meu novo aplicativo Shiny: Análise Causal com CausalImpact!</h3>
                             <p class="blog-excerpt">
@@ -1670,7 +1637,7 @@
                         </div>
                     </div>
                     <div class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQEIpSIYXgk_EA/feedshare-shrink_800/B4DZa7xE.dG4Ak-/0/1746906927570?e=1751500800&v=beta&t=ZRRuNqIt_mKqdpDD_C-gVg4T8_JMBQSvPyRG_qIgSfo'); background-size: cover; background-position: center;"></div>
+                        <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQEIpSIYXgk_EA/feedshare-shrink_800/B4DZa7xE.dG4Ak-/0/1746906927570?e=1751500800&v=beta&t=ZRRuNqIt_mKqdpDD_C-gVg4T8_JMBQSvPyRG_qIgSfo');"></div>
                         <div class="blog-content">
                             <div class="blog-date">26 de Janeiro de 2024</div>
                             <h3 class="blog-title">Uma breve reflexão sobre modelagem de Equações Estruturais</h3>
@@ -1761,7 +1728,6 @@
                 targetSectionElement.classList.add('active');
             }
             
-            // Fecha o menu mobile se estiver aberto
             if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
             }
@@ -1772,15 +1738,9 @@
                 e.preventDefault();
                 const targetSectionId = link.dataset.section;
                 setActiveSection(targetSectionId);
-                // Opcional: rolar para a seção após a navegação, especialmente útil se o cabeçalho for alto
-                // const targetElement = document.getElementById(targetSectionId);
-                // if (targetElement) {
-                //    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // }
             });
         });
 
-        // Adiciona funcionalidade aos botões da seção hero para navegar para outras seções
         document.querySelectorAll('.btn-primary[data-section], .btn-secondary[data-section]').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -1788,32 +1748,27 @@
                 setActiveSection(targetSectionId);
                 const targetElement = document.getElementById(targetSectionId);
                 if (targetElement) {
-                    // Adiciona um pequeno delay para garantir que a seção está visível antes de rolar
                     setTimeout(() => {
                         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 100); // 100ms de delay
+                    }, 100); 
                 }
             });
         });
         
-        // Funcionalidade do menu mobile
         if (mobileMenuBtn && navMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
             });
         }
 
-        // Fecha o menu mobile ao clicar fora dele
         document.addEventListener('click', (e) => {
             if (navMenu && mobileMenuBtn && navMenu.classList.contains('active')) {
-                // Verifica se o clique foi fora do menu e fora do botão do menu
                 if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     navMenu.classList.remove('active');
                 }
             }
         });
 
-        // Adiciona sombra à navbar ao rolar
         if (navbar) {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1824,53 +1779,43 @@
             });
         }
         
-        // Desabilita links com a classe 'disabled-link'
         document.querySelectorAll('.disabled-link').forEach(link => {
             link.addEventListener('click', (e) => e.preventDefault());
         });
 
-        // Função para ordenar os artigos por ano (mais recente primeiro) e depois por título
         function sortArticles() {
             const articlesGrid = document.querySelector('#articles .articles-grid');
-            if (!articlesGrid) return; // Sai se o grid não for encontrado
+            if (!articlesGrid) return; 
 
             const articles = Array.from(articlesGrid.querySelectorAll('.article-card'));
 
             articles.sort((a, b) => {
-                // Pega o ano do texto do elemento .article-year
                 const yearA_match = a.querySelector('.article-year').textContent.match(/\d{4}/);
                 const yearB_match = b.querySelector('.article-year').textContent.match(/\d{4}/);
 
-                // Converte para número, ou usa 0 se não encontrar um ano (para evitar erros)
                 const yearA = yearA_match ? parseInt(yearA_match[0], 10) : 0; 
                 const yearB = yearB_match ? parseInt(yearB_match[0], 10) : 0; 
                 
-                // Ordena por ano (descendente)
                 if (yearB !== yearA) {
                     return yearB - yearA; 
                 }
                 
-                // Se os anos forem iguais, ordena por título (ascendente)
                 const titleA_element = a.querySelector('.article-title');
                 const titleB_element = b.querySelector('.article-title');
 
-                // Pega o texto do título, ou string vazia se não encontrar (para evitar erros)
                 const titleA = titleA_element ? titleA_element.textContent.toLowerCase() : '';
                 const titleB = titleB_element ? titleB_element.textContent.toLowerCase() : '';
                 
-                return titleA.localeCompare(titleB); // Compara os títulos
+                return titleA.localeCompare(titleB); 
             });
 
-            // Limpa o grid e adiciona os artigos ordenados
-            articlesGrid.innerHTML = ''; // Limpa o conteúdo atual
-            articles.forEach(article => articlesGrid.appendChild(article)); // Adiciona os artigos ordenados
+            articlesGrid.innerHTML = ''; 
+            articles.forEach(article => articlesGrid.appendChild(article)); 
         }
 
-
-        // Ao carregar o DOM
         document.addEventListener('DOMContentLoaded', () => {
-            setActiveSection('home'); // Define a seção inicial como 'home'
-            sortArticles(); // Ordena os artigos
+            setActiveSection('home'); 
+            sortArticles(); 
         });
 
     </script>
