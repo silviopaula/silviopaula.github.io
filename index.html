@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[⚠️ Suspicious Content] <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -274,6 +274,7 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            flex-wrap: wrap; /* Permite que os botões quebrem linha se necessário */
         }
 
         .btn { 
@@ -322,6 +323,9 @@
             text-align: center;
             margin-top: 40px; 
             margin-bottom: 20px; 
+        }
+        .cv-download-button-container .btn { /* Estilo para botões dentro do container de download */
+            margin-bottom: 10px; /* Adiciona um pequeno espaço abaixo de cada botão */
         }
 
 
@@ -998,6 +1002,11 @@
                 padding-left: 15px; 
                 padding-right: 15px;
             }
+            /* Ajuste para botões na home em telas menores para não ficarem muito largos */
+            .hero-buttons .btn-secondary {
+                max-width: 300px; /* Ou o valor que achar adequado */
+                align-self: center;
+            }
 
 
             .contact-content {
@@ -1050,6 +1059,10 @@
             .btn-primary, .btn-cv-download { 
                 padding: 15px 30px;
                 font-size: 0.9rem;
+            }
+             .hero-buttons .btn-secondary { /* Garante que o botão secundário também se ajuste */
+                font-size: 0.9rem;
+                padding: 15px 30px;
             }
 
 
@@ -1131,6 +1144,9 @@
                             Conheça meu trabalho
                             <i class="fas fa-arrow-right"></i>
                         </a>
+                        <a href="https://github.com/silviopaula/silviopaula.github.io/raw/main/files/Carta%20de%20Apresenta%C3%A7%C3%A3o%20-%20Silvio%20da%20Rosa%20Paula%2C%20Ph.D_.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 10px;"> <i class="fas fa-file-alt"></i>
+                            Ver Carta de Apresentação
+                        </a>
                     </div>
                 </div>
                 <div class="home-visual">
@@ -1169,6 +1185,10 @@
                     <a href="https://github.com/silviopaula/silviopaula.github.io/raw/main/files/Silvio%20da%20Rosa%20Paula%20-%20Curriculo%20vitae.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cv-download">
                         <i class="fas fa-download"></i>
                         Download CV Completo (PDF)
+                    </a>
+                    <a href="https://github.com/silviopaula/silviopaula.github.io/raw/main/files/Carta%20de%20Apresenta%C3%A7%C3%A3o%20-%20Silvio%20da%20Rosa%20Paula%2C%20Ph.D_.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cv-download" style="margin-top: 15px;">
+                        <i class="fas fa-file-alt"></i>
+                        Download Carta de Apresentação (PDF)
                     </a>
                 </div>
 
