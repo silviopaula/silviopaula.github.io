@@ -413,18 +413,22 @@
             line-height: 1.4;
         }
 
-        .article-authors {
+        .article-authors { /* Usado para 'Tipo de Participação' nos cards de eventos */
             color: var(--text-secondary);
             margin-bottom: 10px; 
             font-weight: 500;
             font-size: 0.95rem;
         }
 
-        .article-journal {
-            color: var(--text-light);
-            font-style: italic;
+        .article-journal { /* Usado para 'Trabalho Apresentado/Papel' nos cards de eventos */
+            color: var(--text-secondary); /* Alterado de text-light para melhor leitura */
+            font-style: normal; /* Removido italic para detalhes do evento */
             margin-bottom: 15px; 
-            font-size: 0.9rem;
+            font-size: 0.95rem; /* Aumentado para melhor leitura */
+            line-height: 1.6;
+        }
+        .article-journal strong {
+            color: var(--primary-dark);
         }
         
         .article-abstract-container {
@@ -680,6 +684,8 @@
         .portfolio-content {
             padding: 25px; 
             flex-grow: 1; 
+            display: flex; /* Added for flex properties */
+            flex-direction: column; /* Added for flex properties */
         }
 
         .portfolio-category {
@@ -1177,7 +1183,7 @@
                                 <li>Implementação de ensemble models, conciliando modelos econométricos tradicionais com a versatilidade de modelos de machine learning e redes neurais, visando reduzir os desvios das projeções.</li>
                                 <li>Criação de relatórios interativos para monitorar os desvios das projeções.</li>
                                 <li>Elaboração de estudos de impacto causal no setor elétrico.</li>
-                                <li>Condução de estudos sobre os efeitos da renda e do clima no consumo de energia residencial.</li>
+                                <li>Acompanhamento de indicadores macroeconômicos.</li>
                                 <li>Trabalho desenvolvido principalmente nas linguagens R, Python e SQL.</li>
                                 <li>Apresentação das projeções em reuniões corporativas.</li>
                             </ul>
@@ -1293,7 +1299,7 @@
                             <ul>
                                 <li>Modelos de Regressão Linear e Não Linear</li>
                                 <li>Modelos de Séries Temporais (ARIMA, VAR, VEC)</li>
-                                <li>Modelos de Painel de Dados (Efeitos Fixos/Aleatórios, GMM)</li>
+                                <li>Modelos de Painel de Dados (Efeitos Fixos/Aleatórios, System/difference GMM)</li>
                                 <li>Variáveis Instrumentais (IV)</li>
                                 <li>Equações Estruturais (SEM)</li>
                                 <li>Diferença-em-Diferenças (DID)</li>
@@ -1307,19 +1313,17 @@
                         <div class="skills-card-item">
                             <h5>Machine Learning & Deep Learning</h5>
                             <ul>
-                                <li>Modelos de Regressão (Linear, Ridge, Lasso, ElasticNet)</li>
-                                <li>Árvores de Decisão, Random Forest, Gradient Boosting (XGBoost, LightGBM)</li>
-                                <li>Support Vector Machines (SVM)</li>
+                                <li>Modelos de Regressão (Linear, Não Linear, penalized, Gaussian, SVM, leap, bayes, GAM, Redes Neurais, Gradient Boosting Regressor (ex: XGBoost, LightGBM, CatBoost))
                                 <li>Redes Neurais (Artificiais, Convolucionais, Recorrentes - LSTM)</li>
-                                <li>AutoML</li>
-                                <li>Modelos de Classificação (Logística, k-NN, Naive Bayes)</li>
+                                <li>AutoML (Caret, Pycaret, autoKeras, H2O, tidymodels, autoTS)</li>
+                                <li>Modelos de Classificação (Logística, k-NN, Naive Bayes, tree, Gradient Boosting)</li>
                                 <li>Modelos de Clusterização (K-Means, Hierárquico)</li>
                             </ul>
                         </div>
                         <div class="skills-card-item">
                             <h5>Geoestatística e Econometria Espacial</h5>
                             <ul>
-                                <li>Modelos Espaciais (SAR, SEM, SAC)</li>
+                                <li>Modelos Espaciais (SAR, SEM, SAC, SLX, SDM, SDEM, GNS)</li>
                                 <li>Interpolação Espacial (IDW, Krigagem)</li>
                                 <li>Manipulação de Shapefiles e Dados Georreferenciados</li>
                             </ul>
@@ -1490,7 +1494,7 @@
                 <div class="section-header">
                     <h2 class="section-title">Produção Acadêmica</h2>
                     <p class="section-subtitle">
-                        Publicações científicas, teses, dissertações e outras contribuições acadêmicas.
+                        Publicações científicas, teses, dissertações, participações em eventos e outras contribuições acadêmicas.
                     </p>
                     <p class="lattes-link-header">
                         <a href="http://lattes.cnpq.br/4981826568605006" target="_blank" rel="noopener noreferrer">
@@ -1715,7 +1719,43 @@
                             <a href="https://online.unisc.br/seer/index.php/cepe/article/view/8881" target="_blank" rel="noopener noreferrer" class="article-link primary">Ver Artigo</a>
                         </div>
                     </div>
-                </div>
+
+                    <div class="article-card">
+                        <div class="article-year">2020</div>
+                        <h3 class="article-title" data-title="48º ENCONTRO NACIONAL DE ECONOMIA - Avaliação do Impacto do PSR">48º ENCONTRO NACIONAL DE ECONOMIA</h3>
+                        <p class="article-journal"><strong>Trabalho Apresentado:</strong> AVALIAÇÃO DO IMPACTO DO PROGRAMA DE SUBVENÇÃO AO PRÊMIO DO SEGURO RURAL NA PRODUTIVIDADE AGROPECUÁRIA.</p>
+                        <p class="article-authors"><em>Tipo: Apresentação em Congresso</em></p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-year">2020</div>
+                        <h3 class="article-title" data-title="XXIII ENCONTRO DE ECONOMIA DA REGIÃO SUL - Avaliação do Impacto do PSR">XXIII ENCONTRO DE ECONOMIA DA REGIÃO SUL</h3>
+                        <p class="article-journal"><strong>Trabalho Apresentado:</strong> AVALIAÇÃO DO IMPACTO DO PROGRAMA DE SUBVENÇÃO AO PRÊMIO DO SEGURO RURAL NA PRODUTIVIDADE AGROPECUÁRIA.</p>
+                        <p class="article-authors"><em>Tipo: Apresentação em Congresso</em></p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-year">2020</div>
+                        <h3 class="article-title" data-title="XXIII ENCONTRO DE ECONOMIA DA REGIÃO SUL - Impacto do Bug dos Relógios">XXIII ENCONTRO DE ECONOMIA DA REGIÃO SUL</h3>
+                        <p class="article-journal"><strong>Trabalho Apresentado:</strong> O IMPACTO DO BUG DOS RELÓGIOS SOBRE O ABSENTEÍSMO: UMA ANÁLISE PARA A EDIÇÃO DO EXAME NACIONAL DO ENSINO MÉDIO 2019.</p>
+                        <p class="article-authors"><em>Tipo: Apresentação em Congresso</em></p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-year">2019</div>
+                        <h3 class="article-title" data-title="47º ENCONTRO NACIONAL DE ECONOMIA - Participação">47º ENCONTRO NACIONAL DE ECONOMIA</h3>
+                        <p class="article-authors"><em>Tipo: Participação em Congresso</em></p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-year">2019</div>
+                        <h3 class="article-title" data-title="Congresso de Iniciação Científica - Debatedor">Congresso de Iniciação Científica</h3>
+                        <p class="article-journal"><strong>Papel:</strong> Debatedor - Área de Avaliação:Econ./Planej. Urb. e Reg., Demog./Serviço Social/Adm.,Tur.</p>
+                        <p class="article-authors"><em>Tipo: Participação como Debatedor</em></p>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-year">2018</div>
+                        <h3 class="article-title" data-title="46º ENCONTRO NACIONAL DE ECONOMIA - Canais de Crescimento Econômico">46º ENCONTRO NACIONAL DE ECONOMIA</h3>
+                        <p class="article-journal"><strong>Trabalho Apresentado:</strong> CANAIS DE CRESCIMENTO ECONÔMICO A PARTIR DO CAPITAL HUMANO: UMA ANÁLISE EM PAINEL DINÂMICO PARA O BRASIL.</p>
+                        <p class="article-authors"><em>Tipo: Apresentação em Congresso</em></p>
+                    </div>
+                    </div>
             </div>
         </section>
 
@@ -1749,7 +1789,26 @@
                             </div>
                         </div>
                     </div>
-                  
+                    <div class="portfolio-card">
+                        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--text-light), var(--text-secondary));"> 
+                            <i class="fas fa-hard-hat"></i> </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-category">AVISO | EM BREVE</div>
+                            <h3 class="portfolio-title">Seção em Desenvolvimento</h3>
+                            <p class="portfolio-description">
+                                Esta seção do portfólio está crescendo! Novos projetos e exemplos de trabalhos aplicados em ciência de dados, análise econômica e desenvolvimento de dashboards estão sendo preparados e serão adicionados em breve. Volte em breve para conferir as novidades!
+                            </p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Novos Projetos</span>
+                                <span class="tech-tag">Dashboards</span>
+                                <span class="tech-tag">Análise de Dados</span>
+                            </div>
+                            <div class="portfolio-links" style="visibility: hidden;"> <a href="#" class="article-link primary disabled-link" style="pointer-events: none; opacity: 0.5;">
+                                    <i class="fas fa-eye"></i>Ver Projeto
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     </div>
             </div>
         </section>
@@ -1955,39 +2014,35 @@
         /**
          * Ordena os cards de artigos na seção 'Acadêmico' por ano (mais recente primeiro)
          * e depois por título (alfabeticamente) em caso de empate no ano.
+         * Utiliza o atributo 'data-title' para ordenação do título.
          */
         function sortArticles() {
             const articlesGrid = document.querySelector('#articles .articles-grid');
-            if (!articlesGrid) return; // Sai se o grid não for encontrado
+            if (!articlesGrid) return; 
 
             const articles = Array.from(articlesGrid.querySelectorAll('.article-card'));
 
             articles.sort((a, b) => {
-                // Extrai o ano do texto do elemento .article-year
                 const yearA_match = a.querySelector('.article-year').textContent.match(/\d{4}/);
                 const yearB_match = b.querySelector('.article-year').textContent.match(/\d{4}/);
 
-                // Converte para número, tratando casos onde o ano pode não ser encontrado
                 const yearA = yearA_match ? parseInt(yearA_match[0], 10) : 0; 
                 const yearB = yearB_match ? parseInt(yearB_match[0], 10) : 0; 
                 
-                // Ordena por ano (descendente)
                 if (yearB !== yearA) {
                     return yearB - yearA; 
                 }
                 
-                // Se os anos forem iguais, ordena por título (ascendente)
                 const titleA_element = a.querySelector('.article-title');
                 const titleB_element = b.querySelector('.article-title');
 
-                // Usa o atributo data-title para ordenação, garantindo que o título completo seja usado
-                const titleA = titleA_element && titleA_element.dataset.title ? titleA_element.dataset.title.toLowerCase() : '';
-                const titleB = titleB_element && titleB_element.dataset.title ? titleB_element.dataset.title.toLowerCase() : '';
+                // Prioriza o atributo data-title para ordenação
+                let titleA = titleA_element && titleA_element.dataset.title ? titleA_element.dataset.title.toLowerCase() : (titleA_element ? titleA_element.textContent.toLowerCase() : '');
+                let titleB = titleB_element && titleB_element.dataset.title ? titleB_element.dataset.title.toLowerCase() : (titleB_element ? titleB_element.textContent.toLowerCase() : '');
                 
                 return titleA.localeCompare(titleB); 
             });
 
-            // Limpa o grid e adiciona os artigos ordenados
             articlesGrid.innerHTML = ''; 
             articles.forEach(article => articlesGrid.appendChild(article)); 
         }
@@ -2003,36 +2058,34 @@
                 const abstractP = abstractContainer ? abstractContainer.querySelector('p.article-abstract') : null;
                 const toggleBtn = card.querySelector('.toggle-abstract-btn');
 
-                if (abstractContainer && abstractP && toggleBtn) {
-                    const abstractTextLength = abstractP.textContent.trim().length;
+                if (toggleBtn) { // Verifica se o botão existe
+                    if (abstractContainer && abstractP && abstractP.textContent.trim().length > 0) {
+                        const abstractTextLength = abstractP.textContent.trim().length;
+                        toggleBtn.style.display = 'inline-flex'; // Garante que o botão seja visível se houver resumo
 
-                    if (abstractTextLength === 0) { // Sem resumo
-                        toggleBtn.style.display = 'none';
-                        abstractContainer.style.display = 'none'; 
-                    } else if (abstractTextLength < 200 && abstractTextLength > 0) { // Resumo curto, expande por padrão
-                        abstractContainer.classList.add('expanded');
-                        toggleBtn.setAttribute('aria-expanded', 'true');
-                        toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>'; // Ícone para cima
-                        toggleBtn.style.display = 'inline-flex'; 
-                    } else { // Resumo longo, começa colapsado
-                        abstractContainer.classList.remove('expanded'); 
-                        toggleBtn.setAttribute('aria-expanded', 'false');
-                        toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>'; // Ícone para baixo
-                        toggleBtn.style.display = 'inline-flex'; 
-                    }
-
-                    // Adiciona listener de clique ao botão de toggle
-                    toggleBtn.addEventListener('click', () => {
-                        const isExpanded = abstractContainer.classList.toggle('expanded');
-                        toggleBtn.setAttribute('aria-expanded', isExpanded.toString());
-                        if (isExpanded) {
-                            toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>'; // Ícone para cima
-                        } else {
-                            toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>'; // Ícone para baixo
+                        if (abstractTextLength < 200) { 
+                            abstractContainer.classList.add('expanded');
+                            toggleBtn.setAttribute('aria-expanded', 'true');
+                            toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>';
+                        } else { 
+                            abstractContainer.classList.remove('expanded'); 
+                            toggleBtn.setAttribute('aria-expanded', 'false');
+                            toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>';
                         }
-                    });
-                } else if (toggleBtn) { // Se não houver container de resumo, esconde o botão
-                    toggleBtn.style.display = 'none';
+
+                        toggleBtn.addEventListener('click', () => {
+                            const isExpanded = abstractContainer.classList.toggle('expanded');
+                            toggleBtn.setAttribute('aria-expanded', isExpanded.toString());
+                            if (isExpanded) {
+                                toggleBtn.innerHTML = 'Ocultar resumo <i class="fas fa-chevron-up"></i>';
+                            } else {
+                                toggleBtn.innerHTML = 'Ver resumo <i class="fas fa-chevron-down"></i>';
+                            }
+                        });
+                    } else { // Sem resumo ou container de resumo, esconde o botão
+                        toggleBtn.style.display = 'none';
+                        if(abstractContainer) abstractContainer.style.display = 'none';
+                    }
                 }
             });
         }
@@ -2040,12 +2093,11 @@
 
         // Executa funções de inicialização quando o DOM estiver completamente carregado
         document.addEventListener('DOMContentLoaded', () => {
-            setActiveSection('home'); // Define a seção 'home' como ativa ao carregar
-            sortArticles(); // Ordena os artigos
-            initializeAbstractToggle(); // Inicializa a funcionalidade de toggle dos resumos
+            setActiveSection('home'); 
+            sortArticles(); 
+            initializeAbstractToggle(); 
         });
 
     </script>
 </body>
 </html>
-```
