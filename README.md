@@ -6,7 +6,7 @@ Sou Doutor em Economia Aplicada com experiência em Ciência de Dados, Econometr
 
 ## 📄 Documentos Disponíveis
 
-- [📎 Currículo (PDF)](https://raw.githubusercontent.com/silviopaula/silviopaula.github.io/main/files/Curriculo%20-%20Silvio%20da%20Rosa%20Paula.pdf)
+- [📎 Currículo (PDF)](https://raw.githubusercontent.com/silviopaula/silviopaula.github.io/main/files/Silvio%20da%20Rosa%20Paula%20-%20Curriculo%20vitae.pdf)
 - [📝 Carta de Apresentação (PDF)](https://raw.githubusercontent.com/silviopaula/silviopaula.github.io/main/files/Carta%20de%20Apresenta%C3%A7%C3%A3o%20-%20Silvio%20da%20Rosa%20Paula.pdf)
 
 Clique nos links acima para visualizar ou baixar os arquivos diretamente.
