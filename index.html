@@ -638,14 +638,7 @@
         }
 
 
-        /* Seção Portfólio */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-            gap: 40px;
-            justify-content: center; 
-        }
-
+        /* Estilos reutilizados da seção Portfólio */
         .portfolio-card { 
             background: var(--white); 
             border-radius: 20px; 
@@ -684,37 +677,11 @@
             transform: scale(1.1);
         }
 
-
         .portfolio-content {
             padding: 25px; 
             flex-grow: 1; 
-            display: flex; /* Added for flex properties */
-            flex-direction: column; /* Added for flex properties */
-        }
-
-        .portfolio-category {
-            font-size: 0.85rem; 
-            color: var(--accent-primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-            text-transform: uppercase; 
-        }
-
-        .portfolio-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem; 
-            color: var(--primary-dark);
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .portfolio-description {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
         }
 
         .portfolio-tech {
@@ -731,88 +698,6 @@
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500; 
-        }
-
-        .portfolio-links {
-            display: flex;
-            gap: 15px;
-            margin-top: auto; 
-        }
-
-        /* Seção Blog */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .blog-card { 
-            background: var(--white); 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px var(--shadow-light); 
-            transition: all 0.4s ease; 
-            border: 1px solid var(--border-color); 
-            display: flex; 
-            flex-direction: column; 
-            overflow: hidden;
-        }
-        .blog-card:hover { 
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px var(--shadow-medium);
-        }
-
-        .blog-image {
-            height: 200px;
-            position: relative;
-            background-size: cover; 
-            background-position: center; 
-            border-top-left-radius: 20px; 
-            border-top-right-radius: 20px;
-        }
-
-        .blog-content {
-            padding: 25px; 
-            flex-grow: 1;
-        }
-
-        .blog-date {
-            font-size: 0.85rem; 
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .blog-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--primary-dark);
-            margin-bottom: 12px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 15px; 
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-
-        .read-more {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: transform 0.3s ease, color 0.3s ease; 
-            font-size: 0.95rem;
-            margin-top: auto;
-        }
-
-        .read-more:hover {
-            transform: translateX(5px);
-            color: var(--accent-secondary);
         }
 
         /* Seção Contato */
@@ -1015,7 +900,7 @@
             .curriculum-grid {
                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
-            .portfolio-grid, .blog-grid, .articles-grid {
+            .articles-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
@@ -1082,11 +967,11 @@
                 font-size: 1.4rem;
             }
 
-            .portfolio-grid, .blog-grid, .articles-grid, .curriculum-grid {
+            .articles-grid, .curriculum-grid {
                 grid-template-columns: 1fr; /* Uma coluna para telas pequenas */
                 gap: 25px;
             }
-            .portfolio-card, .blog-card, .article-card, .skills-card-item {
+            .portfolio-card, .article-card, .skills-card-item {
                  padding: 20px;
             }
             .portfolio-image {
@@ -1107,12 +992,6 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link" data-section="articles">Acadêmico</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" data-section="portfolio">Portfólio</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link" data-section="blog">Blog</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link" data-section="contact">Contato</a>
@@ -1146,8 +1025,12 @@
                             <i class="fas fa-paper-plane"></i>
                             Entre em Contato
                         </a>
+                        <a href="https://github.com/silviopaula/portifolio" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i>
+                            Ver Portfólio de Projetos
+                        </a>
                         <a href="#" class="btn-secondary" data-section="curriculum">
-                            Conheça meu trabalho
+                            Ver Currículo Detalhado
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="https://raw.githubusercontent.com/silviopaula/silviopaula.github.io/main/files/Carta%20de%20Apresenta%C3%A7%C3%A3o%20-%20Silvio%20da%20Rosa%20Paula.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 10px;"> <i class="fas fa-file-alt"></i>
@@ -1789,108 +1672,6 @@
                         <p class="article-authors"><em>Tipo: Apresentação em Congresso</em></p>
                     </div>
                     </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="section">
-            <div class="content-container">
-                <div class="section-header">
-                    <h2 class="section-title">Portfólio de Projetos</h2>
-                    <p class="section-subtitle">
-                        Projetos aplicados em ciência de dados, análise econômica e desenvolvimento de soluções tecnológicas.
-                    </p>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card">
-                        <div class="portfolio-image"> <i class="fas fa-magnifying-glass-chart"></i> </div>
-                        <div class="portfolio-content">
-                            <div class="portfolio-category">APLICATIVO WEB | CIÊNCIA DE DADOS</div>
-                            <h3 class="portfolio-title">App Shiny para Inferência Causal (CausalImpact)</h3>
-                            <p class="portfolio-description">
-                                Aplicativo web interativo desenvolvido com R Shiny para realizar análises de impacto causal. Utiliza o pacote CausalImpact para estimar efeitos de intervenções em séries temporais, oferecendo uma ferramenta visual e prática para pesquisadores e analistas.
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">R</span> <span class="tech-tag">Shiny</span> <span class="tech-tag">CausalImpact</span> <span class="tech-tag">Séries Temporais</span> <span class="tech-tag">Inferência Causal</span>
-                            </div>
-                            <div class="portfolio-links">
-                                <a href="https://silviopaula.shinyapps.io/app_causal_impact/" target="_blank" rel="noopener noreferrer" class="article-link primary">
-                                    <i class="fas fa-external-link-alt"></i>Acessar App
-                                </a>
-                                <a href="https://github.com/silviopaula/Causal_impact_app" target="_blank" rel="noopener noreferrer" class="article-link secondary">
-                                    <i class="fab fa-github"></i>Ver no GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="portfolio-image" style="background: linear-gradient(135deg, var(--text-light), var(--text-secondary));"> 
-                            <i class="fas fa-hard-hat"></i> </div>
-                        <div class="portfolio-content">
-                            <div class="portfolio-category">AVISO | EM BREVE</div>
-                            <h3 class="portfolio-title">Seção em Desenvolvimento</h3>
-                            <p class="portfolio-description">
-                                Esta seção do portfólio está crescendo! Novos projetos e exemplos de trabalhos aplicados em ciência de dados, análise econômica e desenvolvimento de dashboards estão sendo preparados e serão adicionados em breve. Volte em breve para conferir as novidades!
-                            </p>
-                            <div class="portfolio-tech">
-                                <span class="tech-tag">Novos Projetos</span>
-                                <span class="tech-tag">Dashboards</span>
-                                <span class="tech-tag">Análise de Dados</span>
-                            </div>
-                            <div class="portfolio-links" style="visibility: hidden;"> <a href="#" class="article-link primary disabled-link" style="pointer-events: none; opacity: 0.5;">
-                                    <i class="fas fa-eye"></i>Ver Projeto
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <section id="blog" class="section">
-            <div class="content-container">
-                <div class="section-header">
-                    <h2 class="section-title">Blog & Insights</h2>
-                    <p class="section-subtitle">
-                        Reflexões sobre economia, ciência de dados, setor energético e metodologias quantitativas.
-                    </p>
-                </div>
-                <div class="blog-grid" id="blog-ideas-container">
-                    <div class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQE2V0ephOlCIw/feedshare-shrink_800/B4DZVzSMu.HkAg-/0/1741395906278?e=1751500800&v=beta&t=8iKi8AnVo1V0P2q3irY9m1tswbeEcC9vTqPxDU4Akcg');"></div>
-                        <div class="blog-content">
-                            <div class="blog-date">28 de Maio de 2024</div> <h3 class="blog-title">Gostaria de compartilhar meu novo aplicativo Shiny: Análise Causal com CausalImpact!</h3>
-                            <p class="blog-excerpt">
-                                Explore meu novo aplicativo Shiny que facilita a análise de impacto causal utilizando o pacote CausalImpact do R. Uma ferramenta interativa para pesquisadores e analistas de dados.
-                            </p>
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7303943820562358272/" target="_blank" rel="noopener noreferrer" class="read-more">
-                                Ver no LinkedIn <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image" style="background-image: url('https://media.licdn.com/dms/image/v2/D4D22AQEIpSIYXgk_EA/feedshare-shrink_800/B4DZa7xE.dG4Ak-/0/1746906927570?e=1751500800&v=beta&t=ZRRuNqIt_mKqdpDD_C-gVg4T8_JMBQSvPyRG_qIgSfo');"></div>
-                        <div class="blog-content">
-                            <div class="blog-date">26 de Janeiro de 2024</div>
-                            <h3 class="blog-title">Uma breve reflexão sobre modelagem de Equações Estruturais</h3>
-                            <p class="blog-excerpt">
-                                Compartilho com entusiasmo o início de uma nova jornada como Especialista em Regulação de Serviços Públicos de Energia no Grupo Equatorial Energia. Uma oportunidade para aplicar meus conhecimentos em um setor dinâmico e essencial para o desenvolvimento do país.
-                            </p>
-                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7327058722394890240/" target="_blank" rel="noopener noreferrer" class="read-more">
-                                Ver no LinkedIn <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="article-card curriculum-cert-event-card" style="text-align: center; padding: 50px; opacity:0.7">
-                        <i class="fas fa-chart-pie fa-3x" style="color: var(--accent-primary); margin-bottom: 20px;"></i>
-                        <h4 class="curriculum-item-title">Tópicos Futuros</h4>
-                        <p>Discussões sobre LLMs, IA generativa em econometria, e mais.</p>
-                    </div>
-                    <div class="article-card curriculum-cert-event-card" style="text-align: center; padding: 50px; opacity:0.7">
-                        <i class="fas fa-comments fa-3x" style="color: var(--accent-primary); margin-bottom: 20px;"></i>
-                        <h4 class="curriculum-item-title">Interaja</h4>
-                        <p>Sugestões de temas são bem-vindas através da seção de contato.</p>
-                    </div>
-                </div>
             </div>
         </section>
 
